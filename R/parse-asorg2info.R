@@ -44,18 +44,22 @@ parse_asorg2info <- function(as_org2info_fil) {
 
     stats::setNames(
       as.data.frame(
-        stri_split_fixed(l[(db_pos[1]+1):(db_pos[2]-1)], "|", 5, simplify = TRUE)
+        stri_split_fixed(l[(db_pos[1]+1):(db_pos[2]-1)], "|", 5, simplify = TRUE),
+        stringsAsFactors = FALSE
       ),
       c("org_id", "changed", "org_name", "country", "source")
     ) -> asorg_info
+
     class(asorg_info) <- c("tbl_df", "tbl", "data.frame")
 
     setNames(
       as.data.frame(
-        stri_split_fixed(l[(db_pos[2]+1):length(l)], "|", 6, simplify = TRUE)
+        stri_split_fixed(l[(db_pos[2]+1):length(l)], "|", 6, simplify = TRUE),
+        stringsAsFactors = FALSE
       ),
       c("aut", "changed", "aut_name", "org_id", "opaque_id", "source")
     ) -> aut_info
+
     class(aut_info) <- c("tbl_df", "tbl", "data.frame")
 
     list(

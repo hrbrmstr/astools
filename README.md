@@ -74,7 +74,7 @@ parse_asorg2info("~/Data/20180703.as-org2info.txt.gz")
     ## $asorg_info
     ## # A tibble: 71,288 x 5
     ##    org_id        changed  org_name                          country source
-    ##    <fct>         <fct>    <fct>                             <fct>   <fct> 
+    ##    <chr>         <chr>    <chr>                             <chr>   <chr> 
     ##  1 01CO-ARIN     20170128 O1.com                            US      ARIN  
     ##  2 111S-ARIN     20170128 One Eleven Internet Services      US      ARIN  
     ##  3 1800CO-2-ARIN 20171130 1-800 Contacts, Inc.              US      ARIN  
@@ -90,7 +90,7 @@ parse_asorg2info("~/Data/20180703.as-org2info.txt.gz")
     ## $aut_info
     ## # A tibble: 86,933 x 6
     ##    aut   changed  aut_name     org_id         opaque_id                             source
-    ##    <fct> <fct>    <fct>        <fct>          <fct>                                 <fct> 
+    ##    <chr> <chr>    <chr>        <chr>          <chr>                                 <chr> 
     ##  1 1     20180220 LVLT-1       LPL-141-ARIN   e5e3b9c13678dfc483fb1f819d70883c_ARIN ARIN  
     ##  2 2     20120621 UDEL-DCN     UNIVER-19-ARIN c3a16289a7ed6fb75fec2e256e5b5101_ARIN ARIN  
     ##  3 3     20100927 MIT-GATEWAYS MIT-2-ARIN     d98c567cda2db06e693f2b574eafe848_ARIN ARIN  
