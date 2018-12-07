@@ -4,8 +4,14 @@
 \name{astools}
 \alias{astools}
 \alias{astools-package}
-\title{...}
+\title{Tools to Work With Autonomous System ('AS') Data}
 \description{
+A collection of utilities for downloading, parsing, reading and analyzing
+autonomous system ('AS') network and organization data from various internet
+sources including 'CAIDA' (\url{https://caida.org}) and 'BGP Routing Table Analysis
+Reports' \url{https://bgp.potaroo.net}
+}
+\details{
 \itemize{
 \item URL: \url{https://gitlab.com/hrbrmstr/astools}
 \item BugReports: \url{https://gitlab.com/hrbrmstr/astools/issues}

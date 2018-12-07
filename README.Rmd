@@ -4,11 +4,22 @@ output: rmarkdown::github_document
 
 # astools
 
+Tools to Work With Autonomous System ('AS') Network and Organization Data
+
 ## Description
+
+A collection of utilities for downloading, parsing, reading and analyzing autonomous system ('AS') network and organization data from various internet sources including 'CAIDA' (<https://caida.org>) and 'BGP Routing Table Analysis Reports' <https://bgp.potaroo.net>
 
 ## What's Inside The Tin
 
 The following functions are implemented:
+
+- `asnames_current`:	Retrive current 'asnames.txt' from 'bgp.poraroo.net'
+- `read_asnames`:	 Retrieve an historical `asnames.txt` from local cache
+- `parse_asnames`:	Parse arbitrary 'asnames.txt' downloaded from 'bgp.poraroo.net'
+- `parse_asorg2info`:	Parses CAIDA 'asorg2info' Files
+- `parse_routeviews`:	Parses Arbitrary RouteViews "Prefix-to-AS" Files
+- `routeviews_latest`:	Caches & Returns the latest CAIDA-processed RouteViews "Prefix-to-AS" File
 
 ## Installation
 
@@ -24,9 +35,36 @@ options(width=120)
 
 ```{r message=FALSE, warning=FALSE, error=FALSE}
 library(astools)
+library(tidyverse)
 
 # current verison
 packageVersion("astools")
 
 ```
 
+### RouteViews Prefix-to-AS
+
+```{r}
+routeviews_latest()
+```
+
+### AS Org-to-Info
+
+```{r}
+parse_asorg2info("~/Data/20180703.as-org2info.txt.gz")
+```
+
+### AS Names
+
+```{r}
+asnames_current()
+```
+
+### Combining RouteViews & AS Names
+
+These are now cached so there is no re-downloading.
+
+```{r}
+routeviews_latest() %>% 
+  left_join(asnames_current())
+```

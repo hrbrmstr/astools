@@ -1,6 +1,6 @@
 Package: astools
 Type: Package
-Title: astools title goes here otherwise CRAN checks fail
+Title: Tools to Work With Autonomous System ('AS') Network and Organization Data
 Version: 0.1.0
 Date: 2018-12-06
 Authors@R: c(
@@ -8,7 +8,10 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-5670-2640"))
   )
 Maintainer: Bob Rudis <bob@rud.is>
-Description: A good description goes here otherwise CRAN checks fail.
+Description: A collection of utilities for downloading, parsing, reading and
+    analyzing autonomous system ('AS') network and organization data from various
+    internet sources including 'CAIDA' (<https://caida.org>) and 'BGP Routing Table 
+    Analysis Reports' <https://bgp.potaroo.net>
 URL: https://gitlab.com/hrbrmstr/astools
 BugReports: https://gitlab.com/hrbrmstr/astools/issues
 Encoding: UTF-8
@@ -20,5 +23,7 @@ Depends:
     R (>= 3.2.0)
 Imports:
     httr,
-    jsonlite
+    stringi,
+    readr,
+    iptools
 RoxygenNote: 6.1.1
