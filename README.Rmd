@@ -49,7 +49,7 @@ packageVersion("astools")
 (rv_df <- routeviews_latest())
 ```
 
-Which can with `iptools::ip_to_asn()`:
+Which can work with `iptools::ip_to_asn()`:
 
 ```{r}
 rv_trie <- as_asntrie(rv_df)

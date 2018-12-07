@@ -66,7 +66,7 @@ packageVersion("astools")
     ## 10 1.0.128.0/18 23969 1.0.128.0  1.0.191.255    16809984    16826367
     ## # ... with 786,025 more rows
 
-Which can with `iptools::ip_to_asn()`:
+Which can work with `iptools::ip_to_asn()`:
 
 ``` r
 rv_trie <- as_asntrie(rv_df)
