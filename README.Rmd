@@ -19,6 +19,7 @@ The following functions are implemented:
 - `parse_asnames`:	Parse arbitrary 'asnames.txt' downloaded from 'bgp.poraroo.net'
 - `parse_asorg2info`:	Parses CAIDA 'asorg2info' Files
 - `parse_routeviews`:	Parses Arbitrary RouteViews "Prefix-to-AS" Files
+- `as_asntrie`:	Convert a 'routeviews' data frame to a trie
 - `routeviews_latest`:	Caches & Returns the latest CAIDA-processed RouteViews "Prefix-to-AS" File
 
 ## Installation
@@ -45,7 +46,15 @@ packageVersion("astools")
 ### RouteViews Prefix-to-AS
 
 ```{r}
-routeviews_latest()
+(rv_df <- routeviews_latest())
+```
+
+Which can with `iptools::ip_to_asn()`:
+
+```{r}
+rv_trie <- as_asntrie(rv_df)
+
+iptools::ip_to_asn(rv_trie, "174.62.167.97")
 ```
 
 ### AS Org-to-Info

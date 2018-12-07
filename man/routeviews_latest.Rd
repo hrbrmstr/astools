@@ -24,6 +24,11 @@ for usage and citation information.
 \note{
 A "\code{~/.routeviews}" directory will be created if it does not exist.
 }
+\examples{
+\dontrun{
+routeviews_latest()
+}
+}
 \references{
 \url{http://data.caida.org/datasets/routing/routeviews-prefix2as}
 }

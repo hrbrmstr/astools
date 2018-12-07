@@ -25,5 +25,7 @@ Imports:
     httr,
     stringi,
     readr,
-    iptools
+    iptools,
+    triebeard,
+    magrittr
 RoxygenNote: 6.1.1

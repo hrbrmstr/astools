@@ -23,6 +23,7 @@ The following functions are implemented:
     ‘bgp.poraroo.net’
   - `parse_asorg2info`: Parses CAIDA ‘asorg2info’ Files
   - `parse_routeviews`: Parses Arbitrary RouteViews “Prefix-to-AS” Files
+  - `as_asntrie`: Convert a ‘routeviews’ data frame to a trie
   - `routeviews_latest`: Caches & Returns the latest CAIDA-processed
     RouteViews “Prefix-to-AS” File
 
@@ -47,7 +48,7 @@ packageVersion("astools")
 ### RouteViews Prefix-to-AS
 
 ``` r
-routeviews_latest()
+(rv_df <- routeviews_latest())
 ```
 
     ## # A tibble: 786,035 x 6
@@ -64,6 +65,16 @@ routeviews_latest()
     ##  9 1.0.128.0/17 23969 1.0.128.0  1.0.255.255    16809984    16842751
     ## 10 1.0.128.0/18 23969 1.0.128.0  1.0.191.255    16809984    16826367
     ## # ... with 786,025 more rows
+
+Which can with `iptools::ip_to_asn()`:
+
+``` r
+rv_trie <- as_asntrie(rv_df)
+
+iptools::ip_to_asn(rv_trie, "174.62.167.97")
+```
+
+    ## [1] "7922"
 
 ### AS Org-to-Info
 

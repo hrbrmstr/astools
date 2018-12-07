@@ -16,6 +16,9 @@
 #' @return a data frame (tibble) with "`cidr`" and "`asn`" columns.
 #' @seealso parse_routeviews
 #' @export
+#' @examples \dontrun{
+#' routeviews_latest()
+#' }
 routeviews_latest <- function() {
 
   tdy <- Sys.Date()

@@ -12,7 +12,7 @@
 #' @name astools
 #' @docType package
 #' @author Bob Rudis (bob@@rud.is)
-#' @import stringi
+#' @import stringi triebeard
 #' @importFrom stats setNames
 #' @importFrom iptools range_boundaries
 #' @importFrom httr GET write_disk stop_for_status

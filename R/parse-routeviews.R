@@ -36,7 +36,7 @@ parse_routeviews <- function(rv_fil) {
 
     xdf$range <- NULL
 
-    class(xdf) <- c("tbl_df", "tbl", "data.frame")
+    class(xdf) <- c("routeviews", "tbl_df", "tbl", "data.frame")
 
     xdf
 
